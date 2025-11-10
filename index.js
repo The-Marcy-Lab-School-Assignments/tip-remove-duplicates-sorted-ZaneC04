@@ -15,7 +15,18 @@
  */
 
 const removeDuplicates = (nums) => {
-    //write your code here
+    let dupes = 0;
+    for (let i = 0; i < nums.length; i++) {
+        for (let e = 1; e < nums.length; e++) {
+            if (nums[i] === nums[e] && i !== e) {
+                dupes++;
+                nums.splice(i, 1)
+
+            }
+        }
+    }
+
+    return nums.length
 };
 
 // Example usage (commented out to avoid interference with tests)
